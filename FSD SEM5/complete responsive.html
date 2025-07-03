@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Responsive Flex Grid Layout</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header, footer {
+    background: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .box {
+    background: #f0f0f0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 8px;
+  }
+  @media screen and (max-width: 768px) {
+    main {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  @media screen and (max-width: 480px) {
+    header, footer {
+      font-size: 0.9rem;
+      padding: 0.7rem;
+    }
+    main {
+      padding: 0.5rem;
+      gap: 0.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Responsive Flex & Grid Layout</h1>
+</header>
+
+<main>
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+  <div class="box">Box 4</div>
+  
+</main>
+
+<footer>
+  &copy; Best Responsive Layout Example
+</footer>
+
+</body>
+</html>
